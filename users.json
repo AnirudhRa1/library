@@ -1,16 +1,27 @@
 [
   {
-    "id": 1,
-    "name": "John Doe",
-    "email": "john.doe@example.com",
-    "age": 30,
-    "address": "123 Main St, Springfield, IL"
+      "user_id": "U001",
+      "name": "Alice Johnson",
+      "borrowed_books": [
+          {
+              "isbn": "978-3-16-148410-0",
+              "due_date": "2024-12-25"
+          }
+      ]
   },
   {
-    "id": 2,
-    "name": "Jane Smith",
-    "email": "jane.smith@example.com",
-    "age": 25,
-    "address": "456 Oak St, Springfield, IL"
+      "user_id": "U002",
+      "name": "Bob Smith",
+      "borrowed_books": []
+  },
+  {
+      "user_id": "U003",
+      "name": "Charlie Brown",
+      "borrowed_books": [
+          {
+              "isbn": "978-0-452-28423-4",
+              "due_date": "2024-12-20"
+          }
+      ]
   }
 ]

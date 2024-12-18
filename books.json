@@ -1,39 +1,32 @@
-{
-  "books": [
-    {
-      "title": "To Kill a Mockingbird",
-      "author": "Harper Lee",
-      "genre": "Fiction",
-      "year": 1960,
-      "isbn": "978-0061120084"
-    },
-    {
-      "title": "1984",
-      "author": "George Orwell",
-      "genre": "Dystopian",
-      "year": 1949,
-      "isbn": "978-0451524935"
-    },
-    {
-      "title": "Pride and Prejudice",
-      "author": "Jane Austen",
-      "genre": "Romance",
-      "year": 1813,
-      "isbn": "978-1503290563"
-    },
-    {
+[
+  {
+      "isbn": "978-3-16-148410-0",
       "title": "The Great Gatsby",
       "author": "F. Scott Fitzgerald",
-      "genre": "Classic",
-      "year": 1925,
-      "isbn": "978-0743273565"
-    },
-    {
-      "title": "Moby-Dick",
-      "author": "Herman Melville",
-      "genre": "Adventure",
-      "year": 1851,
-      "isbn": "978-1503280786"
-    }
-  ]
-}
+      "available": true
+  },
+  {
+      "isbn": "978-0-06-112008-4",
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "available": true
+  },
+  {
+      "isbn": "978-0-452-28423-4",
+      "title": "1984",
+      "author": "George Orwell",
+      "available": true
+  },
+  {
+      "isbn": "978-1-4767-9400-3",
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "available": false
+  },
+  {
+      "isbn": "978-0-14-017739-8",
+      "title": "The Picture of Dorian Gray",
+      "author": "Oscar Wilde",
+      "available": true
+  }
+]

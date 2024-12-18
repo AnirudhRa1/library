@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Library Management System</h1>
+
+        <div id="mainMenu">
+            <button onclick="showForm('addBookForm')">Add Book</button>
+            <button onclick="showForm('removeBookForm')">Remove Book</button>
+            <button onclick="showForm('searchBooksForm')">Search Books</button>
+            <button onclick="showForm('borrowBookForm')">Borrow Book</button>
+            <button onclick="showForm('returnBookForm')">Return Book</button>
+            <button onclick="showForm('viewUsersForm')">View Users</button>
+        </div>
+
+        <!-- Add Book Form -->
+        <div id="addBookForm" class="form-container" style="display:none;">
+            <h2>Add Book</h2>
+            <form action="/add_book" method="POST">
+                <input type="text" name="title" placeholder="Enter Book Title" required><br>
+                <input type="text" name="author" placeholder="Enter Author" required><br>
+                <input type="text" name="isbn" placeholder="Enter ISBN" required><br>
+                <button type="submit">Add Book</button>
+            </form>
+            <button class="back-btn" onclick="backToMenu()">Back</button>
+        </div>
+
+        <!-- Search Books Form -->
+        <div id="searchBooksForm" class="form-container" style="display:none;">
+            <h2>Search Books</h2>
+            <form action="/search_books" method="POST">
+                <input type="text" name="search_term" placeholder="Search by title, author or ISBN" required><br>
+                <button type="submit">Search</button>
+            </form>
+            <button class="back-btn" onclick="backToMenu()">Back</button>
+        </div>
+
+        <!-- Display Search Results -->
+        {% if found_books %}
+            <h3>Search Results:</h3>
+            <ul>
+                {% for book in found_books %}
+                    <li>{{ book.title }} by {{ book.author }} (ISBN: {{ book.isbn }})</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <!-- View Users -->
+        {% if users %}
+            <h3>Users:</h3>
+            <ul>
+                {% for user in users %}
+                    <li>{{ user.name }} (User ID: {{ user.user_id }})</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
+    <script>
+        function showForm(formId) {
+            document.getElementById('addBookForm').style.display = 'none';
+            document.getElementById('removeBookForm').style.display = 'none';
+            document.getElementById('searchBooksForm').style.display = 'none';
+            document.getElementById('borrowBookForm').style.display = 'none';
+            document.getElementById('returnBookForm').style.display = 'none';
+            document.getElementById('viewUsersForm').style.display = 'none';
+            
+            document.getElementById(formId).style.display = 'block';
+        }
+
+        function backToMenu() {
+            document.getElementById('mainMenu').style.display = 'block';
+            document.getElementById('addBookForm').style.display = 'none';
+            document.getElementById('removeBookForm').style.display = 'none';
+            document.getElementById('searchBooksForm').style.display = 'none';
+            document.getElementById('borrowBookForm').style.display = 'none';
+            document.getElementById('returnBookForm').style.display = 'none';
+            document.getElementById('viewUsersForm').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
